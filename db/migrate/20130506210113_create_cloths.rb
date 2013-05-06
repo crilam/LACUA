@@ -8,7 +8,7 @@ class CreateCloths < ActiveRecord::Migration
       t.string :color
       t.string :feston
       t.string :tipo
-      t.int :categoty_id
+      t.integer :categoty_id
 
       t.timestamps
     end
