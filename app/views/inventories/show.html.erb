@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sub location:</b>
+  <%= @inventory.sub_location %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @inventory.location_id %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @inventory.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

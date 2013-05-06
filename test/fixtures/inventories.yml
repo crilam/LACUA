@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sub_location: MyString
+  location_id: 
+  amount: 
+
+two:
+  sub_location: MyString
+  location_id: 
+  amount: 

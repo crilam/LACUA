@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  distintion: MyString
+  height: MyString
+  widht: MyString
+  depth: MyString
+  color: MyString
+  feston: MyString
+  tipo: MyString
+  categoty_id: 
+
+two:
+  distintion: MyString
+  height: MyString
+  widht: MyString
+  depth: MyString
+  color: MyString
+  feston: MyString
+  tipo: MyString
+  categoty_id: 

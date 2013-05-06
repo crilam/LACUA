@@ -1,0 +1,49 @@
+<%= form_for(@cloth) do |f| %>
+  <% if @cloth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cloth.errors.count, "error") %> prohibited this cloth from being saved:</h2>
+
+      <ul>
+      <% @cloth.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :distintion %><br />
+    <%= f.text_field :distintion %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :widht %><br />
+    <%= f.text_field :widht %>
+  </div>
+  <div class="field">
+    <%= f.label :depth %><br />
+    <%= f.text_field :depth %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :feston %><br />
+    <%= f.text_field :feston %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br />
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :categoty_id %><br />
+    <%= f.text_field :categoty_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
