@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  attr_accessible :nombre
+  attr_accessible :name
 end
