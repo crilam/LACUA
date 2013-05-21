@@ -11,10 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130506213518) do
 
   create_table "categories", :force => true do |t|
     t.string   "nombre"
+=======
+ActiveRecord::Schema.define(:version => 20130521221415) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+>>>>>>> 93689857fef5684a49d82a1597f60f3c20b5577a
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -22,14 +29,26 @@ ActiveRecord::Schema.define(:version => 20130506213518) do
   create_table "cloths", :force => true do |t|
     t.string   "distintion"
     t.string   "height"
+<<<<<<< HEAD
     t.string   "widht"
+=======
+    t.string   "width"
+>>>>>>> 93689857fef5684a49d82a1597f60f3c20b5577a
     t.string   "depth"
     t.string   "color"
     t.string   "feston"
     t.string   "tipo"
+<<<<<<< HEAD
     t.integer  "categoty_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+=======
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "name"
+    t.string   "description"
+>>>>>>> 93689857fef5684a49d82a1597f60f3c20b5577a
   end
 
   create_table "inventories", :force => true do |t|
@@ -50,6 +69,10 @@ ActiveRecord::Schema.define(:version => 20130506213518) do
     t.string   "codigo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+<<<<<<< HEAD
+=======
+    t.string   "name"
+>>>>>>> 93689857fef5684a49d82a1597f60f3c20b5577a
   end
 
 end
