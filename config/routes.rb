@@ -1,4 +1,8 @@
 LACUA::Application.routes.draw do
+  get "home/viewCart"
+
+  get "home/generateCart"
+
   resources :cloths
 
 
