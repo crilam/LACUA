@@ -11,8 +11,10 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'haml-rails'
 end
 
+gem "twitter-bootstrap-rails"
 gem 'haml' 
 
 # Gems used only for assets and not required
@@ -28,6 +30,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
