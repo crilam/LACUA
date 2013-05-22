@@ -16,8 +16,14 @@ require 'csv'
  ['Quinto Piso','P5'],
  ['Subterraneo 1','S1']].each do |i|
   Location.find_or_create_by_codigo(codigo: i[1],name:i[0] )
+
+
 end
 
+Location.all.each do |l|
+  	l.inventories << Inventory.create(state: 'limpia')
+  	l.inventories << Inventory.create(state: 'sucia')	
+end
 
 csv_text = File.read('db/categorias.csv')
 categorias = CSV.parse(csv_text)
