@@ -6,8 +6,9 @@ LACUA::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get "home/viewCart"
-
+  get "home/registerCleanCloths"
   get "home/generateCart"
+  post "home/createRegisterCleanCloths"
 
   resources :cloths
 

@@ -9,5 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery-tablesorter/theme.default
+ *= require jquery-tablesorter/addons/pager/jquery.tablesorter.pager
  *= require_tree .
  */
