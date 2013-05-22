@@ -1,6 +1,8 @@
 class Inventory < ActiveRecord::Base
   attr_accessible :amount, :location_id, :sub_location
-  has_and_belongs_to_many :clothes
+  belongs_to :location
+  has_and_belongs_to_many :cloths
+  belongs_to :cloths_inventories
 
 	def withdraw(value)
 		updateAmount(value*-1)
