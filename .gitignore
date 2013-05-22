@@ -17,7 +17,7 @@
 
 
 =======
-.idea
+/.idea
 *.rbc
 *.sassc
 .sass-cache
