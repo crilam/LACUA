@@ -1,4 +1,7 @@
 LACUA::Application.routes.draw do
+  resources :cloths_inventories
+
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
