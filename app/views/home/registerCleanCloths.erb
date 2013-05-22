@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+  <div id="tableContainer">
+      <table id="myTable" class="tablesorter">
+        <thead >
+            <tr >
+              <th>Nombre</th>
+              <th>Categoria</th>
+              <th>Descripcion</th>
+              <th></th></tr>
+            </tr>
+        </thead>
+
+        <tbody >
+        <tr >
+          <td>Cell Content 1</td>
+          <td>Cell Content 2</td>
+          <td>Cell Content 3</td>
+        </tr>
+        <% @cloths.each do |c|%>
+            <tr>
+              <td> <%= c.name %></td>
+              <td><%= c.category.name %></td>
+              <td><%= c.description %></td>
+              <td><a href="#">hola</a></td>
+            </tr>
+        <%end %>
+        </tbody>
+      </table>
+  </div>
+
+<p>
+</p><p>
+</p>
+<p>
+</p>
+
+<%= form_tag do %>
+    <input id="item" name="[0][inventory_clothes]">
+    <input id="item" name="[1][inventory_clothes]">
+    <%= submit_tag 'Ingresar Ropa' %>
+<% end %>
+
+
+
+
+
+<script>
+    $(document).ready(function()
+        {
+            $("#myTable").tablesorter({
+                scrollHeight: 300,
+                widgets: ['default','scroller']
+            })
+        }
+)
+</script>
+
