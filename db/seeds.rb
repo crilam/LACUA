@@ -25,3 +25,9 @@ categorias.each do |cat|
   Category.find_or_create_by_name(:name=> cat[0])
 end
 
+csv_text = File.read('db/ropa_hospitalaria.csv')
+ropa = CSV.parse(csv_text)
+ropa.each do |cat|
+  category_id = Category.where( name: cat[8]).first.id
+  Cloth.find_or_create_by_name(:name => cat[0], distintion: cat[1],depth: cat[2],width: cat[3],height: cat[4],color: cat[5],description:  cat[6],feston:  cat[7],category_id: category_id)
+end
