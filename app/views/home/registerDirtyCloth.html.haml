@@ -1,0 +1,4 @@
+%p Registrar bolsa de ropa sucia:
+
+= f.simple_fields_for :cloth do |c|
+	= f.collection_select :speciality_id, Speciality.all, :id, :name, :prompt => true
