@@ -13,7 +13,7 @@ class ClothsInventoriesController < ApplicationController
   # GET /cloths_inventories/1
   # GET /cloths_inventories/1.json
   def show
-    @cloths_inventory = ClothsInventory.find(params[:id])
+    @cloths_inventory = ClothsInventory.where("inventory_id = ?", params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,6 +1,21 @@
 %p#notice= notice
 
+%table{:class => "tableSorter", :id => "lista"}
+	%thead
+		%tr
+			%th Ubicacion
+			%th Prenda
+			%th Cantidad
+	%tbody  	
+		-@cloths_inventory.each do |ci|
+			%tr
+				%td= Inventory.find(ci.inventory_id).location.name
+				%td= Cloth.find(ci.cloth_id).name
+				%td= ci.amount.to_s
 
-= link_to 'Edit', edit_cloths_inventory_path(@cloths_inventory)
-\|
-= link_to 'Back', cloths_inventories_path
+= link_to 'VOlver', cloths_inventories_path
+
+:javascript
+	$(document).ready(function(){
+		$("#lista").tablesorter()
+	})
