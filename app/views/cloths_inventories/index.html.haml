@@ -1,0 +1,17 @@
+%h1 Listing cloths_inventories
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @cloths_inventories.each do |cloths_inventory|
+    %tr
+      %td= link_to 'Show', cloths_inventory
+      %td= link_to 'Edit', edit_cloths_inventory_path(cloths_inventory)
+      %td= link_to 'Destroy', cloths_inventory, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cloths inventory', new_cloths_inventory_path

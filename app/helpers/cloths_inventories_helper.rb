@@ -1,0 +1,2 @@
+module ClothsInventoriesHelper
+end
