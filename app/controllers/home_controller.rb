@@ -4,4 +4,8 @@ class HomeController < ApplicationController
 
   def generateCart
   end
+
+  def registerDirtyCloth
+  end
+
 end
