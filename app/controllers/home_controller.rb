@@ -16,12 +16,15 @@ class HomeController < ApplicationController
   def createRegisterCleanCloths
 
       inventory = Inventory.find($ID_ROPA_LIMPIA)
-     params[:items].each do|i|
+      params[:items].each do|i|
 
         #inventory = Inventory.find(i[:inventory_id])
-        clothInventory =ClothsInventories.where(inventory_id: inventory, cloth_id: i[cloth_id]).first
-       if clothInventory
-         clothInventory.amount
+        cloth_inventory = ClothsInventory.where(inventory_id: inventory.id, cloth_id: i[1][:cloth_id]).first
+       if cloth_inventory
+         cloth_inventory.addAmount(i.value)
+       else
+         ClothsInventory.create(inventory_id: inventory.id,cloth_id:i[1][:cloth_id], amount:i[1][:amount])
+
        end
 
 
