@@ -15,7 +15,9 @@
 /log/*.log
 /tmp
 
-.idea
+
+=======
+/.idea
 *.rbc
 *.sassc
 .sass-cache
