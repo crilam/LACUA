@@ -1,0 +1,37 @@
+<h1>Listing cloths</h1>
+
+<table>
+  <tr>
+    <th>Distintion</th>
+    <th>Height</th>
+    <th>Widht</th>
+    <th>Depth</th>
+    <th>Color</th>
+    <th>Feston</th>
+    <th>Tipo</th>
+    <th>Categoty</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cloths.each do |cloth| %>
+  <tr>
+    <td><%= cloth.distintion %></td>
+    <td><%= cloth.height %></td>
+    <td><%= cloth.widht %></td>
+    <td><%= cloth.depth %></td>
+    <td><%= cloth.color %></td>
+    <td><%= cloth.feston %></td>
+    <td><%= cloth.tipo %></td>
+    <td><%= cloth.categoty_id %></td>
+    <td><%= link_to 'Show', cloth %></td>
+    <td><%= link_to 'Edit', edit_cloth_path(cloth) %></td>
+    <td><%= link_to 'Destroy', cloth, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cloth', new_cloth_path %>
