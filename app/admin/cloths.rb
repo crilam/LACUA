@@ -15,5 +15,23 @@ ActiveAdmin.register Cloth do
     default_actions
   end
   
+  show do
+    panel "Cloth" do
+      table_for cloth.cloths_inventories do
+        column "Ubicacion" do |cloths_inventories|
+          cloths_inventories.inventory.location.name
+        end
+        column "Cantidad" do |cloths_inventories|
+          cloths_inventories.amount
+        end
+        column "Estado" do |cloths_inventories|
+          cloths_inventories.inventory.state
+        end
+
+
+      end
+    end
+  end
+  
 
 end

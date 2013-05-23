@@ -7,7 +7,7 @@ ActiveAdmin.register Inventory do
     default_actions
   end
   show do
-    panel "Patients" do
+    panel "Inventaries" do
       table_for inventory.cloths_inventories do
         column "Cantidad" do |cloths_inventories|
           cloths_inventories.amount
