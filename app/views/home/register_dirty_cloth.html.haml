@@ -1,4 +1,68 @@
-%p Registrar bolsa de ropa sucia:
+%p#notice= notice
+%h1 Ingresar Ropa Sucia
+#tableContainer
+  %table#myTable.tablesorter
+    %thead
+      %tr
+        %th Nombre
+        %th Categoria
+        %th Descripcion
+        %th
+    %tbody
+      - @cloths.each do |c|
+        %tr{:id => "cloth_#{c.id}"}
+          %td.clothName
+            = c.name
+          %td.clothCategory
+            = c.category.name
+          %td.clothDescription
+            = c.description
+          %td
+            %input{:id => "amount_#{c.id}", :type => "text"}
+              %button{:id => c.id, :onclick => "addToList(this.id)"} Agregar
+#tableContainerLista
+  = form_tag home_createRegisterCleanCloths_path do
+    %table#lista.tablesorter
+      %thead
+        %tr
+          %th Nombre
+          %th Cantidad
+      %tbody
+    = submit_tag 'Ingresar Ropa'
+:javascript
+  $(document).ready(function()
+      {
+          $("#myTable").tablesorter({
+              scrollHeight: 300,
+              widgets: ['default','scroller']
+          })
+          $("#lista").tablesorter()
+      }
 
-= f.simple_fields_for :cloth do |c|
-	= f.collection_select :speciality_id, Speciality.all, :id, :name, :prompt => true
+  )
+  function addToList(id)
+  {
+
+      var amount =$('#amount_'+id).val()
+      if (isNaN(amount)) return
+      if(amount <= 0) return
+      var index= $('#lista tbody').children().length
+      var cloth = $('#cloth_'+id)
+      var clothName= $('#cloth_'+1).find('.clothName').text()
+
+      if($('#clothItem_'+id).length==0)
+      {
+
+      $('#lista tbody').append("" +
+              " "+ clothName +"" +
+              " "+amount +"" +
+              "" +
+              "")
+      }
+      else
+      {
+          $('#clothItem_'+id).find('.itemAmount').text(parseInt($('#clothItem_'+id).find('.itemAmount').text()) + parseInt(amount))
+          $('#inputClothAmount_'+id).val(parseInt($('#inputClothAmount_'+id).val())+ parseInt(amount))
+
+      }
+  }

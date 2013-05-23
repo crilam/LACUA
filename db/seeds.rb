@@ -9,7 +9,9 @@
 require 'csv'
 
 
-[['Primero Piso','P1'],
+[['Cuarto Ropa Sucia','CRS'],
+ ['Cuarto Ropa Limpia','CRL'],
+ ['Primero Piso','P1'],
  ['Segundo Piso','P2'],
  ['Tercer Piso','P3'],
  ['Cuarto Piso','P4'],
@@ -21,8 +23,8 @@ require 'csv'
 end
 
 Location.all.each do |l|
-  	l.inventories << Inventory.create(state: 'limpia')
-  	l.inventories << Inventory.create(state: 'sucia')	
+  	l.inventories << Inventory.find_or_initialize_by_state(state: 'limpia')
+  	l.inventories << Inventory.find_or_initialize_by_state(state: 'sucia')
 end
 
 csv_text = File.read('db/categorias.csv')
