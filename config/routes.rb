@@ -1,6 +1,7 @@
 LACUA::Application.routes.draw do
+  root :to => redirect("/admin")
+  
   resources :cloths_inventories
-
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -12,12 +13,9 @@ LACUA::Application.routes.draw do
 
   resources :cloths
 
-
   resources :inventories
 
-
   resources :locations
-
 
   resources :categories
 

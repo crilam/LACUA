@@ -1,5 +1,7 @@
 ActiveAdmin.register Cloth do
   index do
+    column  :name
+    column  :description
     column  :distintion
     column  :height
     column  :width
@@ -7,9 +9,9 @@ ActiveAdmin.register Cloth do
     column  :color
     column  :feston
     column  :tipo
-    column  :category_id
-    column  :name
-    column  :description
+    column  :categoria do |cloth|
+      cloth.category.name
+    end
     default_actions
   end
   
