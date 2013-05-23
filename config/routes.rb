@@ -1,5 +1,5 @@
 LACUA::Application.routes.draw do
-  root :to => redirect("/admin")
+  root :to => 'home#index'
 
   get "home/dirty_cloth_menu"
 
