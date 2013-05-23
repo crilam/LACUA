@@ -1,19 +1,29 @@
 class HomeController < ApplicationController
 
+  def index
+
+
+  end
+  def clean_cloths_menu
+
+  end
+  def dirty_cloths_menu
+
+  end
 
   def viewCart
 
 
   end
 
-  def registerCleanCloths
+  def register_clean_cloths
 
       @cloths = Cloth.all
 
 
   end
 
-  def createRegisterCleanCloths
+  def create_register_clean_cloths
 
       inventory = Inventory.find($ID_ROPA_LIMPIA)
       params[:items].each do|i|
@@ -34,7 +44,7 @@ class HomeController < ApplicationController
   def generateCart
   end
 
-  def registerDirtyCloth
+  def register_dirty_cloth
   end
 
 end

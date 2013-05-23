@@ -1,15 +1,20 @@
 LACUA::Application.routes.draw do
   root :to => redirect("/admin")
-  
+
+  get "home/dirty_cloth_menu"
+
+  get "home/clean_cloth_menu"
+
   resources :cloths_inventories
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   get "home/viewCart"
-  get "home/registerCleanCloths"
+  get "home/register_clean_cloths"
+  get "home/register_dirty_cloth"
   get "home/generateCart"
-  post "home/createRegisterCleanCloths"
+  post "home/create_register_clean_cloths"
 
   resources :cloths
 
