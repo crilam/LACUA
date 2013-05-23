@@ -1,6 +1,6 @@
 %p#notice= notice
 #tableContainer
-  %table#myTable.tablesorter
+  %table#myTable.tablesorter.table-bordered
     %thead
       %tr
         %th Nombre
@@ -21,7 +21,7 @@
               %button{:id => c.id, :onclick => "addToList(this.id)"} Agregar
 #tableContainerLista
   = form_tag dirtyClothes_path do
-    %table#lista.tablesorter
+    %table#lista.tablesorter.table-bordered
       %thead
         %tr
           %th Nombre
