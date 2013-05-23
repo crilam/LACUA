@@ -1,7 +1,6 @@
 %p#notice= notice
-%h1 Ingresar Ropa Sucia
 #tableContainer
-  %table#myTable.tablesorter
+  %table#myTable.tablesorter.table-bordered
     %thead
       %tr
         %th Nombre
@@ -21,14 +20,15 @@
             %input{:id => "amount_#{c.id}", :type => "text"}
               %button{:id => c.id, :onclick => "addToList(this.id)"} Agregar
 #tableContainerLista
-  = form_tag home_createRegisterCleanCloths_path do
-    %table#lista.tablesorter
+  = form_tag dirtyClothes_path do
+    %table#lista.tablesorter.table-bordered
       %thead
         %tr
           %th Nombre
           %th Cantidad
       %tbody
     = submit_tag 'Ingresar Ropa'
+
 :javascript
   $(document).ready(function()
       {

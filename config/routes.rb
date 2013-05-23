@@ -15,7 +15,7 @@ LACUA::Application.routes.draw do
   get "home/register_dirty_cloth"
   get "home/generateCart"
   post "home/create_register_clean_cloths"
-  post "home/create_register_dirty_cloths"
+  post "home/create_register_dirty_cloths", :as => "dirtyClothes"
 
   resources :cloths
 
