@@ -8,6 +8,14 @@
 
 require 'csv'
 
+Role.destroy_all
+AdminUser.first.add_role :admin
+puts 'ROLES'
+["admin",
+ "ERL",
+ "ERS"].each do |role|
+  	Role.find_or_create_by_name({ :name => role }, :without_protection => true)
+end
 
 [['Cuarto Ropa Sucia','CRS'],
  ['Cuarto Ropa Limpia','CRL'],
