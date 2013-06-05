@@ -11,8 +11,6 @@ class Ability
         can :register_clean_cloths
     elsif user.has_role? :ERS
         can :register_dirty_cloths
-    else
-        can :read, :all
     end
         
     #

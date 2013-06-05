@@ -1,5 +1,5 @@
 ActiveAdmin.register Inventory do
-  menu :if => proc{ can? :register_clean_cloths, nil}
+  #menu :if => proc{ can? :register_clean_cloths, nil}
   scope :sucia
   scope :limpia
   # controller do

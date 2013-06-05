@@ -1,4 +1,5 @@
 ActiveAdmin.register AdminUser do
+  #menu :if => proc{ can? :manage, :all}
   menu :parent => "Otro"
   index do                            
     column :email                     
