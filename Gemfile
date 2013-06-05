@@ -15,6 +15,9 @@ group :development, :test do
   gem 'haml-rails'
 end
 
+#gem 'activeadmin-cancan'
+gem "cancan"
+gem "rolify"
 gem "twitter-bootstrap-rails"
 gem 'haml' 
 gem 'activeadmin'
