@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    models:
+      admin_user: "Usuario"
+    attributes:
+      cloth:
+        admin_user: "Nombre"

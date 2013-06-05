@@ -1,4 +1,5 @@
 ActiveAdmin.register Cloth do
+  menu :parent => "Otro"
   index do
     column  :name
     column  :description

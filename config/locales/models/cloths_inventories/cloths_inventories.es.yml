@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    models:
+      cloths_inventory: "Inventario Prenda"
+    attributes:
+      cloths_inventory:
+        amount: "Cantidad"

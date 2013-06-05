@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    models:
+      location: "Ubicacion"
+    attributes:
+      location:
+        nombre: "Nombre"

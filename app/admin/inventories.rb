@@ -1,4 +1,11 @@
 ActiveAdmin.register Inventory do
+  scope :sucia
+  scope :limpia
+  # controller do
+  #   def scoped_collection
+  #     Inventory.where(:state => "sucia")
+  #   end
+  # end
   index do
     column :descripcion do |inventory|
             inventory.location.name
@@ -6,6 +13,7 @@ ActiveAdmin.register Inventory do
     column :state
     default_actions
   end
+  
   show do
     panel "Inventaries" do
       table_for inventory.cloths_inventories do

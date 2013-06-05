@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    models:
+      inventory: "Inventario"
+    attributes:
+      inventory:
+        name: "Nombre"

@@ -1,4 +1,7 @@
 class Inventory < ActiveRecord::Base
+  scope :sucia, where(:state => "sucia")
+  scope :limpia, where(:state => "limpia")
+  
   attr_accessible :location_id, :state
   belongs_to :location
   

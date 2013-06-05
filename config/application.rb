@@ -61,5 +61,11 @@ module LACUA
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     config.app_generators.scaffold_controller = :scaffold_controller
+    
+    # For folders with locale to work
+      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    # configurando locales en español
+    config.i18n.default_locale = :es
+    
   end
 end

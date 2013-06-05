@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    models:
+      cloth: "Prenda"
+    attributes:
+      cloth:
+        name: "Nombre"
+        description: "Descripcion"
+        distintion: "Distincion"
+        height: "Altura"
+        width:  "Ancho"
+        depth:  "Largo"
