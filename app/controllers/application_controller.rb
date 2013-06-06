@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   $ID_ROPA_SUCIA =1
 
   rescue_from CanCan::AccessDenied do |exception|
+    puts exception.message
     redirect_to root_url, :alert => exception.message
   end
 

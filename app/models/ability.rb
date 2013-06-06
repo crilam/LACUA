@@ -9,8 +9,11 @@ class Ability
         can :manage, :all
     elsif user.has_role? :ERL
         can :register_clean_cloths
+        can :read, ActiveAdmin::Page, :name => "Dashboard"
+        can :read, :all
     elsif user.has_role? :ERS
         can :register_dirty_cloths
+        can :read, :all
     end
         
     #
