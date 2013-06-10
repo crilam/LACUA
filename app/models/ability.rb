@@ -14,6 +14,8 @@ class Ability
     elsif user.has_role? :ERS
         can :register_dirty_cloths
         can :read, :all
+    else 
+        can :read, ActiveAdmin::Page, :name => "Dashboard"
     end
         
     #

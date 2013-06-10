@@ -10,8 +10,8 @@ ActiveAdmin.register Inventory ,:as => "Ropa Sucia"do
   end
   
   index do
-    column :descripcion do |inventory|
-            inventory.location.name
+    column :descripcion do |ropa_sucia|
+            ropa_sucia.location.name
     end
     column :state
     default_actions
@@ -19,7 +19,7 @@ ActiveAdmin.register Inventory ,:as => "Ropa Sucia"do
   
   show do
     panel "Inventaries" do
-      table_for inventory.cloths_inventories do
+      table_for ropa_sucia.cloths_inventories do
         column "Cantidad" do |cloths_inventories|
           cloths_inventories.amount
         end
