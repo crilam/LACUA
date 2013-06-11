@@ -48,5 +48,9 @@ ActiveAdmin.register Inventory do
       end
     end
   end
-  
+
+  action_item do
+    link_to '#'
+  end
+  collection_action
 end
