@@ -1,5 +1,5 @@
 ActiveAdmin.register Location do
-  menu :parent => "Otro"
+  menu :parent => "Otro", :if => proc{ can? :manage, :all}
   index do
     column :codigo
     column :name

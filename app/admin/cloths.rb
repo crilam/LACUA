@@ -1,5 +1,5 @@
 ActiveAdmin.register Cloth do
-  menu :parent => "Otro"
+  menu :parent => "Otro", :if => proc{ can? :manage, :all}
   index do
     column  :name
     column  :description

@@ -1,6 +1,6 @@
 ActiveAdmin.register Inventory , :as => "Ropa Limpia" do
 
-  menu :parent => "Inventario"
+  menu :parent => "Inventario", :if => proc{ can? :register_clean_cloths, nil}
   
   #filtrar los resultados
   controller do
@@ -23,6 +23,9 @@ ActiveAdmin.register Inventory , :as => "Ropa Limpia" do
       table_for ropa_limpia.cloths_inventories do
         column "Cantidad" do |cloths_inventories|
           cloths_inventories.amount
+        end
+        column "Nombre" do |cloths_inventories|
+          cloths_inventories.cloth.name
         end
         column "Distincion" do |cloths_inventories|
           cloths_inventories.cloth.distintion

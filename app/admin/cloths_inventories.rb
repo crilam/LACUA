@@ -1,5 +1,5 @@
 ActiveAdmin.register ClothsInventory do
-  menu :parent => "Otro"
+  menu :parent => "Otro", :if => proc{ can? :manage, :all}
   index do
     column :amount
     default_actions

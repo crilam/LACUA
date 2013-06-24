@@ -13,13 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-<<<<<<< HEAD
-=======
-
-
-=======
 .idea
->>>>>>> a98b97f1ff9ce08c935c7ca94ed2d128767e4345
 *.rbc
 *.sassc
 .sass-cache

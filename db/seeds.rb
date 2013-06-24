@@ -16,6 +16,8 @@ puts 'ROLES'
  "ERS"].each do |role|
   	Role.find_or_create_by_name({ :name => role }, :without_protection => true)
 end
+puts 'Locations'
+Location.destroy_all
 
 [['Cuarto Ropa Sucia','CRS'],
  ['Cuarto Ropa Limpia','CRL'],
@@ -30,17 +32,25 @@ end
 
 end
 
+puts 'Inventories'
+Inventory.destroy_all
 Location.all.each do |l|
-  	l.inventories << Inventory.find_or_initialize_by_state(state: 'limpia')
-  	l.inventories << Inventory.find_or_initialize_by_state(state: 'sucia')
+	if l.codigo != "CRS"
+  		l.inventories << Inventory.create(state: 'limpia')
+  	end
+  	if l.codigo != "CRL"
+  		l.inventories << Inventory.create(state: 'sucia')
+  	end
 end
 
+puts 'Categories'
 csv_text = File.read('db/categorias.csv')
 categorias = CSV.parse(csv_text)
 categorias.each do |cat|
   Category.find_or_create_by_name(:name=> cat[0])
 end
 
+puts 'Cloths'
 csv_text = File.read('db/ropa_hospitalaria.csv')
 ropa = CSV.parse(csv_text)
 ropa.each do |cat|

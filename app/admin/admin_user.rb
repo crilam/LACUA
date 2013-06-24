@@ -1,13 +1,14 @@
 ActiveAdmin.register AdminUser do
-  #menu :if => proc{ can? :manage, :all}
-  menu :parent => "Otro"
+  menu :parent => "Otro", :if => proc{ can? :manage, :all}
   index do                            
     column :email                     
     column :current_sign_in_at        
     column :last_sign_in_at           
     column :sign_in_count
     column  :rol do |adminUser|
-      adminUser.roles.first.name
+      if !adminUser.roles.first.nil?
+        adminUser.roles.first.name
+      end
     end             
     default_actions                   
   end                                 
