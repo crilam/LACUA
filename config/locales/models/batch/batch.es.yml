@@ -6,7 +6,7 @@ es:
           other: Lotes
     attributes:
       batch:
-        cloth: "Tipo de prenda"
+        cloth_id: "Tipo de prenda"
         reference: "Calidad de referencia"
         state: "Calidad actual"
         description: Descripción

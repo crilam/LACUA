@@ -1,9 +1,6 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-en:
+es:
   active_admin:
-    dashboard_welcome: "Bienvenido a LacuaAdmin."
+    dashboard_welcome: "Bienvenido a Active Admin. Esta es la página de panel predeterminada. Para agregar secciones edita 'app/admin/dashboards.rb'"
     view: "Ver"
     edit: "Editar"
     delete: "Eliminar"
@@ -27,5 +24,6 @@ en:
     less_than: "Menor que"
     main_content: "Por favor implemente %{model}#main_content para mostrar contenido."
     logout: "Salir"
-
-    
+    scopes: 
+        all: Todos
+        broken: Defectuosos

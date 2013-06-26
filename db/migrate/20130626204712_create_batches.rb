@@ -3,6 +3,7 @@ class CreateBatches < ActiveRecord::Migration
     create_table :batches do |t|
       t.float :reference
       t.float :state
+      t.float :quality
       t.string :description
       t.references :cloth
 
