@@ -3,12 +3,14 @@ class CreateCloths < ActiveRecord::Migration
     create_table :cloths do |t|
       t.string :distintion
       t.string :height
-      t.string :widht
+      t.string :width
       t.string :depth
       t.string :color
       t.string :feston
       t.string :tipo
-      t.integer :categoty_id
+      t.integer :category_id
+      t.string :name
+      t.string :description
 
       t.timestamps
     end
