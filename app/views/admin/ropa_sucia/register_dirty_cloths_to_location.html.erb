@@ -28,9 +28,9 @@
     </tbody>
   </table>
 </div>
-
+º
 <div id="tableContainerLista">
-  <%= form_tag create_register_clean_cloths_admin_ropa_limpium_path do %>
+  <%= form_tag create_register_dirty_cloths_to_location_admin_ropa_sucium_path do %>
       <table id="lista" class=>
         <thead >
         <tr >
@@ -45,6 +45,8 @@
 
       </table>
       <%= submit_tag 'Ingresar Ropa' %>
+       <%= collection_select(:inventory, :id, Inventory.where(:state => "limpia"), :id, :name, :prompt => false) %>
+
   <% end %>
 </div>
 
