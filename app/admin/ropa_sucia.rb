@@ -100,19 +100,16 @@ ActiveAdmin.register Inventory ,:as => "Ropa Sucia"do
             cloth_inventory_dirty = ClothsInventory.where(inventory_id: inventory_dirty.id, cloth_id: i[1][:cloth_id]).first
             if cloth_inventory
               amount = cloth_inventory.sendAmount(i[1][:amount].to_i)
+              cloth_inventory.save!
               if cloth_inventory_dirty
                 cloth_inventory_dirty.addAmount(amount)
               else
                 cloth_inventory_dirty = ClothsInventory.new(inventory_id: inventory_dirty.id, cloth_id: i[1][:cloth_id], amount: amount)
               end
-            else
-              #cloth_inventory = ClothsInventory.new(inventory_id: inventory.id, cloth_id: i[1][:cloth_id], amount: amount)
-            end
-            cloth_inventory.save!
             cloth_inventory_dirty.save!
           end
         end
-        redirect_to admin_ropa_limpia_path, notice: 'Ropa ingresada'
+        redirect_to admin_ropa_sucia_path, notice: 'Ropa ingresada'
       end
   
 end

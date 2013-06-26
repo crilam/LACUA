@@ -8,11 +8,9 @@ class Ability
     if user.has_role? :admin
         can :manage, :all
     elsif user.has_role? :ERL
-        can :manage, :all
         can :register_clean_cloths
         can :read, :all
     elsif user.has_role? :ERS
-        can :manage, :all
         can :register_dirty_cloths
         can :read, :all
     else 
