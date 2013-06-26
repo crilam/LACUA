@@ -8,4 +8,8 @@ class Inventory < ActiveRecord::Base
   has_many :cloths, :through => :cloths_inventories
   has_many :cloths_inventories
 
+  def name
+  	self.location.name
+  end
+
 end

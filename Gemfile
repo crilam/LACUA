@@ -5,7 +5,7 @@ gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem "binding_of_caller"
 group :production do
   gem 'pg'
 end
@@ -14,7 +14,9 @@ group :development, :test do
   gem 'sqlite3'
   gem 'haml-rails'
 end
-
+group :development do
+  gem "better_errors"
+end
 #gem 'activeadmin-cancan'
 gem "cancan"
 gem "rolify"
