@@ -60,6 +60,7 @@ ActiveAdmin.register Inventory , :as => "Ropa Limpia" do
   end
     member_action :register_clean_cloths do
       @cloths = Cloth.all
+      @inventory=Inventory.find($ID_ROPA_LIMPIA)
     end
     member_action :create_register_clean_cloths,  :method => :post do
       inventory = Inventory.find($ID_ROPA_LIMPIA)

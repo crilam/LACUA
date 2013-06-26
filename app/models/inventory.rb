@@ -11,5 +11,9 @@ class Inventory < ActiveRecord::Base
   def name
   	self.location.name
   end
+  def get_amount_of_cloths (cloth)
+      cloth_inv=self.cloths_inventories.where(cloth_id: cloth).first
+      cloth_inv ? cloth.inv.amount : 0
+  end
 
 end
