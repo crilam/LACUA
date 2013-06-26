@@ -37,10 +37,9 @@ Inventory.destroy_all
 Location.all.each do |l|
 	if l.codigo != "CRS"
   		l.inventories << Inventory.create(state: 'limpia')
-  	end
-  	if l.codigo != "CRL"
-  		l.inventories << Inventory.create(state: 'sucia')
-  	end
+	else 
+		l.inventories << Inventory.create(state: 'sucia')
+	end
 end
 
 puts 'Categories'

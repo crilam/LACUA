@@ -1,0 +1,93 @@
+<p id="notice"><%= notice %></p>
+
+<div id="tableContainer">
+  <table id="myTable" class="tablesorter table table-striped">
+    <thead >
+    <tr >
+      <th>Nombre</th>
+      <th>Categoria</th>
+      <th>Descripcion</th>
+      <th>Accion</th></tr>
+    </tr>
+    </thead>
+
+    <tbody >
+    <% @cloths.each do |c|%>
+        <tr id="cloth_<%=c.id%>">
+          <td class="clothName"> <%= c.name %></td>
+          <td class="clothCategory"> <%= c.category.name %></td>
+          <td class="clothDescription"> <%= c.description %></td>
+          <td><div class="input-append">
+              <input id="amount_<%= c.id%>" class="cloth_count input-mini" type="text"
+              >
+              <button id="<%= c.id%>" class="btn btn-primary" onclick="addToList(this.id)">Agregar</button>
+              </div>
+          </td>
+        </tr>
+    <%end %>
+    </tbody>
+  </table>
+</div>
+º
+<div id="tableContainerLista">
+  <%= form_tag create_register_dirty_cloths_to_location_admin_ropa_sucium_path do %>
+      <table id="lista" class=>
+        <thead >
+        <tr >
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+      </table>
+      <%= submit_tag 'Ingresar Ropa' %>
+       <%= collection_select(:inventory, :id, Inventory.where(:state => "limpia"), :id, :name, :prompt => false) %>
+
+  <% end %>
+</div>
+
+<script>
+
+    $(document).ready(function()
+            {
+                $("#myTable").tablesorter({
+                    scrollHeight: 300,
+                    widgets: ['default','scroller']
+                })
+                $("#li3sta").tablesorter()
+            }
+
+    )
+    function addToList(id)
+    {
+
+        var amount =$('#amount_'+id).val()
+        if (isNaN(amount)) return
+        if(amount <= 0) return
+        var index= $('#lista tbody').children().length
+        var cloth = $('#cloth_'+id)
+        var clothName= cloth.find('.clothName').text()
+
+        if($('#clothItem_'+id).length==0)
+        {
+
+            $('#lista tbody').append("<tr id='clothItem_"+id+"'>" +
+                    "<td class='itemName'> "+ clothName +"</td>" +
+                    "<td class='itemAmount'> "+amount +"</td>" +
+                    "<td class='listActions'><button class='btn'>Eliminar</button></td>" +
+                    "<input id='inputCloth_"+id+"' name='items["+index+"][cloth_id]' value='"+id+"' type='hidden'>" +
+                    "<input id='inputClothAmount_"+id+"'name='items["+index+"][amount]' value='"+amount+"' type='hidden'></tr>")
+        }
+        else
+        {
+            $('#clothItem_'+id).find('.itemAmount').text(parseInt($('#clothItem_'+id).find('.itemAmount').text()) + parseInt(amount))
+            $('#inputClothAmount_'+id).val(parseInt($('#inputClothAmount_'+id).val())+ parseInt(amount))
+
+        }
+    }
+</script>
+

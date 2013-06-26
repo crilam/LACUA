@@ -18,9 +18,8 @@
           <td class="clothCategory"> <%= c.category.name %></td>
           <td class="clothDescription"> <%= c.description %></td>
           <td><div class="input-append">
-              <input id="amount_<%= c.id%>" class="cloth_count input-mini" type="text"
-              >
-              <button id="<%= c.id%>" class="btn btn-primary" onclick="addToList(this.id)">Agregar</button>
+              <input id="amount_<%= c.id%>" class="cloth_count input-mini" type="text" >
+              <button id="<%= c.id%>" class="btn btn-primary" onclick="addToList(this.id,false)">Agregar</button>
               </div>
           </td>
         </tr>
@@ -28,7 +27,7 @@
     </tbody>
   </table>
 </div>
-º
+
 <div id="tableContainerLista">
   <%= form_tag create_register_clean_cloths_admin_ropa_limpium_path do %>
       <table id="lista" class=>
@@ -48,44 +47,4 @@
   <% end %>
 </div>
 
-<script>
-
-    $(document).ready(function()
-            {
-                $("#myTable").tablesorter({
-                    scrollHeight: 300,
-                    widgets: ['default','scroller']
-                })
-                $("#li3sta").tablesorter()
-            }
-
-    )
-    function addToList(id)
-    {
-
-        var amount =$('#amount_'+id).val()
-        if (isNaN(amount)) return
-        if(amount <= 0) return
-        var index= $('#lista tbody').children().length
-        var cloth = $('#cloth_'+id)
-        var clothName= cloth.find('.clothName').text()
-
-        if($('#clothItem_'+id).length==0)
-        {
-
-            $('#lista tbody').append("<tr id='clothItem_"+id+"'>" +
-                    "<td class='itemName'> "+ clothName +"</td>" +
-                    "<td class='itemAmount'> "+amount +"</td>" +
-                    "<td class='listActions'><button class='btn'>Eliminar</button></td>" +
-                    "<input id='inputCloth_"+id+"' name='items["+index+"][cloth_id]' value='"+id+"' type='hidden'>" +
-                    "<input id='inputClothAmount_"+id+"'name='items["+index+"][amount]' value='"+amount+"' type='hidden'></tr>")
-        }
-        else
-        {
-            $('#clothItem_'+id).find('.itemAmount').text(parseInt($('#clothItem_'+id).find('.itemAmount').text()) + parseInt(amount))
-            $('#inputClothAmount_'+id).val(parseInt($('#inputClothAmount_'+id).val())+ parseInt(amount))
-
-        }
-    }
-</script>
 
