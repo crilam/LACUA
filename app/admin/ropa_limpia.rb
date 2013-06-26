@@ -85,31 +85,31 @@ ActiveAdmin.register Inventory , :as => "Ropa Limpia" do
     action_item do
      link_to "Enviar ropa a piso" , register_clean_cloths_to_location_admin_ropa_limpium_path($ID_ROPA_LIMPIA)
     end
-      member_action :register_clean_cloths_to_location do
-        @cloths = Cloth.all
-      end
-      member_action :create_register_clean_cloths_to_location,  :method => :post do
-        redirect_to register_clean_cloths_to_location_path, notice: 'Error en la solicitud' if params[:items].nil?
+    member_action :register_clean_cloths_to_location do
+      @cloths = Cloth.all
+    end
+    member_action :create_register_clean_cloths_to_location,  :method => :post do
+      redirect_to register_clean_cloths_to_location_path, notice: 'Error en la solicitud' if params[:items].nil?
 
-        inventory = Inventory.find(params[:inventory][:id])
-        inventory_clean = Inventory.find($ID_ROPA_LIMPIA)
-        Cloth.transaction       do
-          params[:items].each do|i|
-            
-            cloth_inventory = ClothsInventory.where(inventory_id: inventory.id, cloth_id: i[1][:cloth_id]).first
-            cloth_inventory_clean = ClothsInventory.where(inventory_id: inventory_clean.id, cloth_id: i[1][:cloth_id]).first
-            amount = cloth_inventory_clean.sendAmount(i[1][:amount].to_i)
-            if cloth_inventory
-              cloth_inventory.addAmount(amount)
-            else
-              cloth_inventory = ClothsInventory.new(inventory_id: inventory.id, cloth_id: i[1][:cloth_id], amount: amount)
-            end
-            cloth_inventory.save!
-            cloth_inventory_clean.save!
+      inventory = Inventory.find(params[:inventory][:id])
+      inventory_clean = Inventory.find($ID_ROPA_LIMPIA)
+      Cloth.transaction       do
+        params[:items].each do|i|
+          
+          cloth_inventory = ClothsInventory.where(inventory_id: inventory.id, cloth_id: i[1][:cloth_id]).first
+          cloth_inventory_clean = ClothsInventory.where(inventory_id: inventory_clean.id, cloth_id: i[1][:cloth_id]).first
+          amount = cloth_inventory_clean.sendAmount(i[1][:amount].to_i)
+          if cloth_inventory
+            cloth_inventory.addAmount(amount)
+          else
+            cloth_inventory = ClothsInventory.new(inventory_id: inventory.id, cloth_id: i[1][:cloth_id], amount: amount)
           end
+          cloth_inventory.save!
+          cloth_inventory_clean.save!
         end
-        redirect_to admin_ropa_limpia_path, notice: 'Ropa ingresada'
       end
+      redirect_to admin_ropa_limpia_path, notice: 'Ropa ingresada'
+    end
 
   ##
   ## Form ##
