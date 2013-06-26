@@ -77,10 +77,13 @@ ActiveAdmin.register Inventory ,:as => "Ropa Sucia"do
           #else
           #  cloth_inventory = ClothsInventory.new(inventory_id: inventory.id,cloth_id:i[1][:cloth_id], amount:i[1][:amount])
           end
-          
+               @listado= params[:items]
         end
       end
-      redirect_to admin_ropa_sucia_path, notice: 'Ropa enviada!'
+      respond_to do |format|
+        format.html {render 'despacho', notice: 'Despacho Creado'  }
+      end
+     # redirect_to admin_ropa_sucia_path, notice: 'Ropa enviada!'
     end
 
     action_item do

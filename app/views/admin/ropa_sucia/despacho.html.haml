@@ -1,0 +1,11 @@
+%table
+  %thead
+    %th Ropa
+    %th Cantidad
+  %tbody
+    -@listado.each do |item|
+      %tr
+        %td
+          =Cloth.find(item[1][:cloth_id]).name
+        %td
+          =item[1][:amount]
