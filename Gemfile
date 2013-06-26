@@ -39,7 +39,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'awesome_print'
 gem 'jquery-tablesorter'
-
+gem 'prawn'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
