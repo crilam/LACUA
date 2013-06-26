@@ -88,6 +88,7 @@ ActiveAdmin.register Inventory , :as => "Ropa Limpia" do
     end
       member_action :register_clean_cloths_to_location do
         @cloths = Cloth.all
+        @inventory = Inventory.find($ID_ROPA_LIMPIA)
       end
       member_action :create_register_clean_cloths_to_location,  :method => :post do
         redirect_to register_clean_cloths_to_location_path, notice: 'Error en la solicitud' if params[:items].nil?

@@ -13,7 +13,7 @@ class Inventory < ActiveRecord::Base
   end
   def get_amount_of_cloths (cloth)
       cloth_inv=self.cloths_inventories.where(cloth_id: cloth).first
-      cloth_inv ? cloth.inv.amount : 0
+      cloth_inv ? cloth_inv.amount : 0
   end
 
 end
