@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reference: 1.5
+  state: 1.5
+  description: MyString
+  cloth: 
+
+two:
+  reference: 1.5
+  state: 1.5
+  description: MyString
+  cloth: 

@@ -1,0 +1,14 @@
+es:
+  activerecord:
+    models:
+      batch: 
+          one: Lote
+          other: Lotes
+    attributes:
+      batch:
+        cloth: "Tipo de prenda"
+        reference: "Calidad de referencia"
+        state: "Calidad actual"
+        description: Descripción
+        quality: "Calidad"
+        

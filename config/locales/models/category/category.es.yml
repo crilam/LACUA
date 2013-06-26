@@ -1,7 +1,9 @@
 es:
   activerecord:
     models:
-      category: "Categoria"
+      category: 
+          one: Categoria
+          other: Categorias
     attributes:
       category:
         name: "Nombre"

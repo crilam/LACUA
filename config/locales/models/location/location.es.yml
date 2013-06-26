@@ -1,7 +1,9 @@
 es:
   activerecord:
     models:
-      location: "Ubicacion"
+      location:
+        one: Ubicacion
+        other: Ubicaciones
     attributes:
       location:
         nombre: "Nombre"

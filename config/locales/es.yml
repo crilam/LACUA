@@ -1,4 +1,6 @@
 es:
+  "true": "Si"
+  "false": "No"
   date:
     abbr_day_names:
     - dom
