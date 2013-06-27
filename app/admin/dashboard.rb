@@ -27,3 +27,15 @@ ActiveAdmin.register_page "Dashboard" do
     end # content
     end
 end
+
+# ActiveAdmin::Dashboards.build do
+#   section "Inventarios recientes" do
+#     table_for Inventory.order("updated_at desc").limit(5) do
+#       column :name do |inventory|
+#         link_to inventory.name, [:admin, inventory]
+#       end
+#       column :updated_at
+#     end
+#     #strong { link_to "Ver el inventario", admin_products_path }
+#   end
+# end

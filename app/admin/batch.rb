@@ -17,7 +17,7 @@ ActiveAdmin.register Batch do
   
   form do |f|
     f.inputs "Detalles" do
-      f.input :cloth_id
+      f.input :cloth
       f.input :description
       f.input :reference
       f.input :state

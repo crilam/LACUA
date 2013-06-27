@@ -58,11 +58,11 @@ ActiveAdmin.register Inventory , :as => "Ropa Limpia" do
   action_item do
      link_to "Registrar ropa Limpia" , register_clean_cloths_admin_ropa_limpium_path($ID_ROPA_LIMPIA)
   end
-    member_action :register_clean_cloths do
+    member_action :register_clean_cloths, :title => "Registrar ropa limpia" do
       @cloths = Cloth.all
       @inventory=Inventory.find($ID_ROPA_LIMPIA)
     end
-    member_action :create_register_clean_cloths,  :method => :post do
+    member_action :create_register_clean_cloths,  :method => :post, :title => "Registrar ropa limpia" do
       inventory = Inventory.find($ID_ROPA_LIMPIA)
 
       redirect_to register_clean_cloths_path, notice: 'Error en la solicitud' if params[:items].nil?
@@ -86,7 +86,7 @@ ActiveAdmin.register Inventory , :as => "Ropa Limpia" do
     action_item do
      link_to "Enviar ropa a piso" , register_clean_cloths_to_location_admin_ropa_limpium_path($ID_ROPA_LIMPIA)
     end
-    member_action :register_clean_cloths_to_location do
+    member_action :register_clean_cloths_to_location, :title => "Enviar ropa a sector" do
       @cloths = Cloth.all
       @inventory = Inventory.find($ID_ROPA_LIMPIA)
     end

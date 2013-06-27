@@ -57,7 +57,7 @@ ActiveAdmin.register Inventory ,:as => "Ropa Sucia"do
   action_item do
      link_to "Enviar ropa a lavanderia" , register_dirty_cloths_admin_ropa_sucium_path($ID_ROPA_SUCIA)
   end
-    member_action :register_dirty_cloths do
+    member_action :register_dirty_cloths, :title => "Enviar ropa a lavanderia" do
       @cloths = Cloth.all
       @inventory = Inventory.find($ID_ROPA_SUCIA)
     end
@@ -89,10 +89,10 @@ ActiveAdmin.register Inventory ,:as => "Ropa Sucia"do
     action_item do
      link_to "Registrar ropa de piso" , register_dirty_cloths_to_location_admin_ropa_sucium_path($ID_ROPA_SUCIA)
     end
-    member_action :register_dirty_cloths_to_location do
+    member_action :register_dirty_cloths_to_location, :title => "Recibir ropa de ubicacion" do
       @cloths = Cloth.all
     end
-    member_action :create_register_dirty_cloths_to_location,  :method => :post do
+    member_action :create_register_dirty_cloths_to_location, :title => "Generar despacho",  :method => :post do
 
       redirect_to register_dirty_cloths_to_location_path, notice: 'Error en la solicitud' if params[:items].nil?
       inventory = Inventory.find(params[:inventory][:id])
